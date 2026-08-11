@@ -994,6 +994,11 @@ summary:focus-visible {
   box-shadow: 0 0 0 5px rgba(240, 173, 63, 0.13);
 }
 
+.publish-note.ready .publish-dot {
+  background: #27c98b;
+  box-shadow: 0 0 0 5px rgba(39, 201, 139, 0.13);
+}
+
 .publish-note div {
   display: grid;
   gap: 3px;

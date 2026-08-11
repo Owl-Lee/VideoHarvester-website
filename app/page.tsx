@@ -124,7 +124,7 @@ export default function Home() {
           <a href="#features">功能</a>
           <a href="#download">下载</a>
           <a href="#faq">常见问题</a>
-          <a className="nav-github" href="#publish">GitHub <span>↗</span></a>
+          <a className="nav-github" href="https://github.com/Owl-Lee/VideoHarvester" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
         </nav>
       </header>
 
@@ -220,7 +220,7 @@ export default function Home() {
             <h3>解压以后，直接使用。</h3>
             <p>已经包含 yt-dlp、FFmpeg 与 Deno。最适合分享给家人朋友。</p>
             <div className="size-row"><b>约 195 MB</b><span>Windows 10 / 11</span></div>
-            <a href="#publish">下载完整版 <span>↓</span></a>
+            <a href="https://github.com/Owl-Lee/VideoHarvester/releases/latest/download/VideoHarvester-v2.0-Full.zip">下载完整版 <span>↓</span></a>
           </article>
           <article className="download-card">
             <div className="download-icon lite-icon">L</div>
@@ -228,13 +228,13 @@ export default function Home() {
             <h3>更小，但首次需要联网。</h3>
             <p>程序会在第一次下载时自动准备所需组件，适合网络稳定的用户。</p>
             <div className="size-row"><b>约 31 KB</b><span>首次联网准备</span></div>
-            <a className="light-button" href="#publish">下载轻量版 <span>↓</span></a>
+            <a className="light-button" href="https://github.com/Owl-Lee/VideoHarvester/releases/latest/download/VideoHarvester-v2.0-Lite.zip">下载轻量版 <span>↓</span></a>
           </article>
         </div>
-        <div className="publish-note" id="publish">
+        <div className="publish-note ready" id="publish">
           <span className="publish-dot" />
-          <div><b>v2.0.0 发布包已经准备完成</b><p>GitHub Releases 地址绑定后，这里的按钮会直接提供下载。</p></div>
-          <a href="https://github.com" target="_blank" rel="noreferrer">前往 GitHub <span>↗</span></a>
+          <div><b>GitHub 仓库：Owl-Lee/VideoHarvester</b><p>下载由 GitHub Releases 提供，页面始终指向最新正式版本。</p></div>
+          <a href="https://github.com/Owl-Lee/VideoHarvester/releases/latest" target="_blank" rel="noreferrer">查看最新版本 <span>↗</span></a>
         </div>
       </section>
 
@@ -263,7 +263,7 @@ export default function Home() {
       <footer>
         <div className="footer-brand"><BrandMark /><span><b>VideoHarvester</b><small>本地视频保存工具</small></span></div>
         <p>仅用于保存你有权下载和使用的内容。不绕过 DRM、付费墙或账号权限。</p>
-        <div><a href="#faq">使用说明</a><a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a><span>© 2026 VideoHarvester</span></div>
+        <div><a href="#faq">使用说明</a><a href="https://github.com/Owl-Lee/VideoHarvester" target="_blank" rel="noreferrer">GitHub</a><span>© 2026 VideoHarvester</span></div>
       </footer>
     </main>
   );
