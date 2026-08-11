@@ -153,6 +153,37 @@ summary:focus-visible {
   background: #1a2b4d;
 }
 
+.language-switch {
+  display: flex;
+  gap: 2px;
+  margin-left: 4px;
+  padding: 3px;
+  border: 1px solid #dce4ef;
+  border-radius: 11px;
+  background: #f2f5f9;
+}
+
+.language-switch button {
+  min-width: 38px;
+  height: 30px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 8px;
+  color: #798598;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  transition: 160ms ease;
+}
+
+.language-switch button.active {
+  color: #0c2c59;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(42, 70, 108, 0.11);
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -232,6 +263,11 @@ summary:focus-visible {
   font-style: normal;
 }
 
+html[lang="en"] .hero h1 {
+  font-size: clamp(45px, 4.4vw, 64px);
+  letter-spacing: -3.5px;
+}
+
 .hero-copy > p {
   max-width: 535px;
   margin: 27px 0 31px;
@@ -287,6 +323,103 @@ summary:focus-visible {
 .hero-visual {
   padding: 58px 0 38px 10px;
   perspective: 1200px;
+}
+
+.real-hero-visual {
+  padding-top: 42px;
+}
+
+.actual-preview {
+  position: relative;
+  width: 100%;
+  max-width: 690px;
+  margin-left: auto;
+  overflow: hidden;
+  border: 1px solid rgba(190, 204, 224, 0.92);
+  border-radius: 24px;
+  background: #eef3f9;
+  box-shadow: 0 38px 90px rgba(43, 85, 138, 0.2), 0 3px 8px rgba(54, 86, 127, 0.08);
+  transform: rotateY(-2deg) rotateX(0.7deg);
+}
+
+.actual-window-bar {
+  display: flex;
+  height: 49px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 17px;
+  border-bottom: 1px solid #dce4ef;
+  color: #37455b;
+  background: rgba(255, 255, 255, 0.94);
+  font-size: 10px;
+}
+
+.actual-window-bar span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 750;
+}
+
+.actual-window-bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: linear-gradient(145deg, #3aafff, #087cff);
+  box-shadow: 0 0 0 3px rgba(8, 124, 255, 0.1);
+}
+
+.actual-window-bar small {
+  color: #8793a5;
+  font-size: 8px;
+}
+
+.screenshot-wrap {
+  padding: 11px;
+  background: linear-gradient(145deg, #e5edf7, #f4f7fb);
+}
+
+.screenshot-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #cbd5e3;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.actual-caption {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 17px 16px;
+  border-top: 1px solid #e0e7f0;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #27c98b;
+  box-shadow: 0 0 0 5px rgba(39, 201, 139, 0.12);
+}
+
+.actual-caption p {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+}
+
+.actual-caption b {
+  color: #26364e;
+  font-size: 10px;
+}
+
+.actual-caption small {
+  color: #8a95a6;
+  font-size: 8px;
 }
 
 .product-preview {
@@ -1237,6 +1370,15 @@ footer > div:last-child {
     padding: 9px 13px;
   }
 
+  .language-switch {
+    margin-left: 0;
+  }
+
+  .language-switch button {
+    min-width: 34px;
+    padding-inline: 6px;
+  }
+
   .hero {
     gap: 20px;
     padding: 118px 20px 62px;
@@ -1245,6 +1387,11 @@ footer > div:last-child {
   .hero h1 {
     font-size: clamp(42px, 13vw, 61px);
     letter-spacing: -3px;
+  }
+
+  html[lang="en"] .hero h1 {
+    font-size: clamp(40px, 11.5vw, 54px);
+    letter-spacing: -2.7px;
   }
 
   .hero-copy > p {
@@ -1262,6 +1409,15 @@ footer > div:last-child {
 
   .hero-visual {
     padding-top: 55px;
+  }
+
+  .actual-preview {
+    border-radius: 18px;
+    transform: none;
+  }
+
+  .actual-window-bar small {
+    display: none;
   }
 
   .float-top {
