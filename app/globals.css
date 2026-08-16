@@ -2,7 +2,7 @@
 
 :root {
   --ink: #0b1731;
-  --muted: #647086;
+  --muted: #526078;
   --line: #dce4f0;
   --soft: #f4f7fb;
   --blue: #087cff;
@@ -24,7 +24,9 @@ body {
   margin: 0;
   background: #fbfcfe;
   color: var(--ink);
-  font-family: var(--font-geist-sans), "Microsoft YaHei UI", "PingFang SC", system-ui, sans-serif;
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -117,8 +119,8 @@ summary:focus-visible {
 .brand small,
 .footer-brand small {
   margin-top: 4px;
-  color: #7a8597;
-  font-size: 10px;
+  color: #59677c;
+  font-size: 13px;
 }
 
 .site-header nav {
@@ -173,7 +175,7 @@ summary:focus-visible {
   background: transparent;
   cursor: pointer;
   font: inherit;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 750;
   transition: 160ms ease;
 }
@@ -316,8 +318,8 @@ html[lang="en"] .hero h1 {
   display: flex;
   gap: 18px;
   margin-top: 24px;
-  color: #8590a2;
-  font-size: 11px;
+  color: #617087;
+  font-size: 14px;
 }
 
 .hero-visual {
@@ -349,9 +351,9 @@ html[lang="en"] .hero h1 {
   justify-content: space-between;
   padding: 0 17px;
   border-bottom: 1px solid #dce4ef;
-  color: #37455b;
+  color: #263750;
   background: rgba(255, 255, 255, 0.94);
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .actual-window-bar span {
@@ -370,8 +372,8 @@ html[lang="en"] .hero h1 {
 }
 
 .actual-window-bar small {
-  color: #8793a5;
-  font-size: 8px;
+  color: #5d6d83;
+  font-size: 12px;
 }
 
 .screenshot-wrap {
@@ -414,12 +416,12 @@ html[lang="en"] .hero h1 {
 
 .actual-caption b {
   color: #26364e;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .actual-caption small {
-  color: #8a95a6;
-  font-size: 8px;
+  color: #64738a;
+  font-size: 12px;
 }
 
 .product-preview {
@@ -484,14 +486,14 @@ html[lang="en"] .hero h1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 9px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .field-label small,
 .settings-row small {
-  color: #8d97a8;
-  font-size: 9px;
+  color: #637188;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -503,7 +505,7 @@ html[lang="en"] .hero h1 {
   color: #334058;
   background: #fafbfd;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
@@ -546,7 +548,7 @@ html[lang="en"] .hero h1 {
   border-radius: 9px;
   color: #637086;
   background: #f8fafd;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .chips button {
@@ -557,7 +559,7 @@ html[lang="en"] .hero h1 {
   color: #fff;
   background: var(--blue);
   font: inherit;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -579,11 +581,11 @@ html[lang="en"] .hero h1 {
 }
 
 .task-head {
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .task-head span {
-  color: #9da8b9;
+  color: #c4cfde;
 }
 
 .progress-track {
@@ -604,13 +606,13 @@ html[lang="en"] .hero h1 {
 }
 
 .task-copy {
-  color: #cbd2de;
-  font-size: 10px;
+  color: #e1e7f0;
+  font-size: 13px;
 }
 
 .task-copy small {
-  color: #788598;
-  font-size: 9px;
+  color: #b9c5d4;
+  font-size: 12px;
 }
 
 .task-list {
@@ -638,12 +640,12 @@ html[lang="en"] .hero h1 {
   display: grid;
   gap: 3px;
   margin: 0;
-  font-size: 9px;
+  font-size: 13px;
 }
 
 .task-list small {
-  color: #778397;
-  font-size: 8px;
+  color: #b7c2d0;
+  font-size: 11px;
 }
 
 .floating-card {
@@ -676,12 +678,12 @@ html[lang="en"] .hero h1 {
   display: grid;
   gap: 3px;
   margin: 0;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .floating-card small {
-  color: #8590a0;
-  font-size: 8px;
+  color: #65738a;
+  font-size: 11px;
 }
 
 .float-top {
@@ -702,9 +704,9 @@ html[lang="en"] .hero h1 {
   min-height: 82px;
   border-top: 1px solid #e6ecf4;
   border-bottom: 1px solid #e6ecf4;
-  color: #788497;
+  color: #58677d;
   background: #fff;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 650;
   letter-spacing: 0.08em;
 }
@@ -732,7 +734,7 @@ html[lang="en"] .hero h1 {
 
 .section-kicker {
   color: var(--blue);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -781,7 +783,7 @@ html[lang="en"] .hero h1 {
 .feature-number {
   color: #a5afbd;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .feature-visual {
@@ -823,9 +825,9 @@ html[lang="en"] .hero h1 {
 
 .feature-card > p {
   margin: 0;
-  color: #778396;
-  font-size: 12px;
-  line-height: 1.8;
+  color: #56657b;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 .workflow-section {
@@ -843,7 +845,7 @@ html[lang="en"] .hero h1 {
 .workflow-copy > p {
   max-width: 450px;
   margin-top: 24px;
-  color: #99a7ba;
+  color: #d0d9e7;
 }
 
 .workflow-copy ol {
@@ -870,7 +872,7 @@ html[lang="en"] .hero h1 {
   border-radius: 12px;
   color: #77b9ff;
   background: #152139;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 750;
 }
 
@@ -880,12 +882,12 @@ html[lang="en"] .hero h1 {
 }
 
 .workflow-copy li b {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .workflow-copy li small {
-  color: #7e8ba0;
-  font-size: 10px;
+  color: #c4cfde;
+  font-size: 14px;
 }
 
 .preflight-card {
@@ -906,8 +908,8 @@ html[lang="en"] .hero h1 {
 }
 
 .preflight-top {
-  color: #657187;
-  font-size: 11px;
+  color: #47576f;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -924,8 +926,8 @@ html[lang="en"] .hero h1 {
 .preflight-title small,
 .preflight-grid small,
 .preflight-path small {
-  color: #909aab;
-  font-size: 9px;
+  color: #66758a;
+  font-size: 12px;
 }
 
 .preflight-title h3 {
@@ -950,7 +952,7 @@ html[lang="en"] .hero h1 {
 }
 
 .preflight-grid b {
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .preflight-path {
@@ -962,7 +964,7 @@ html[lang="en"] .hero h1 {
   border-radius: 12px;
   color: #536076;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .preflight-actions {
@@ -977,7 +979,7 @@ html[lang="en"] .hero h1 {
   color: #627087;
   background: #eef2f7;
   font: inherit;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -1026,7 +1028,7 @@ html[lang="en"] .hero h1 {
   border-radius: 99px;
   color: #087050;
   background: #ddf9ed;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
 }
 
@@ -1055,7 +1057,7 @@ html[lang="en"] .hero h1 {
 .version-label {
   margin: 0 0 8px;
   color: var(--blue);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 800;
 }
 
@@ -1068,8 +1070,8 @@ html[lang="en"] .hero h1 {
 .download-card > p:not(.version-label) {
   min-height: 58px;
   margin: 14px 0 23px;
-  color: #748094;
-  font-size: 12px;
+  color: #53627a;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -1078,8 +1080,8 @@ html[lang="en"] .hero h1 {
   justify-content: space-between;
   padding: 15px 0;
   border-top: 1px solid #edf1f5;
-  color: #8994a5;
-  font-size: 10px;
+  color: #5d6c81;
+  font-size: 13px;
 }
 
 .size-row b {
@@ -1096,7 +1098,7 @@ html[lang="en"] .hero h1 {
   border-radius: 13px;
   color: #fff;
   background: var(--blue);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 750;
   transition: 160ms ease;
 }
@@ -1138,19 +1140,19 @@ html[lang="en"] .hero h1 {
 }
 
 .publish-note b {
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .publish-note p {
   margin: 0;
-  color: #8792a3;
-  font-size: 9px;
+  color: #5d6b80;
+  font-size: 13px;
 }
 
 .publish-note > a {
   margin-left: auto;
   color: var(--blue);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 750;
 }
 
@@ -1180,7 +1182,7 @@ html[lang="en"] .hero h1 {
   padding: 22px 4px;
   cursor: pointer;
   list-style: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -1202,8 +1204,8 @@ html[lang="en"] .hero h1 {
 
 .faq-list details p {
   margin: -4px 40px 22px 4px;
-  color: #6d798c;
-  font-size: 12px;
+  color: #516078;
+  font-size: 15px;
   line-height: 1.85;
 }
 
@@ -1299,8 +1301,8 @@ footer {
 
 footer > p {
   margin: 0;
-  color: #8b95a5;
-  font-size: 9px;
+  color: #65738a;
+  font-size: 13px;
   line-height: 1.6;
   text-align: center;
 }
@@ -1309,8 +1311,8 @@ footer > div:last-child {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
-  color: #8490a2;
-  font-size: 9px;
+  color: #5f6e84;
+  font-size: 13px;
 }
 
 @media (max-width: 1050px) {

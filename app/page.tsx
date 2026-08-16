@@ -85,19 +85,19 @@ function ProductPreview({ lang }: { lang: Lang }) {
     <div className="actual-preview">
       <div className="actual-window-bar">
         <span><i /> VideoHarvester.exe</span>
-        <small>{t("真实运行界面 · Windows 11", "Actual running app · Windows 11")}</small>
+        <small>{t("产品界面预览 · Windows 11", "Interface preview · Windows 11")}</small>
       </div>
       <div className="screenshot-wrap">
         <img
           src="/app-screenshot.png"
-          alt={t("VideoHarvester 真实 Windows 软件界面", "The real VideoHarvester Windows desktop interface")}
+          alt={t("VideoHarvester Windows 软件界面预览", "VideoHarvester Windows interface preview")}
         />
       </div>
       <div className="actual-caption">
         <span className="live-dot" />
         <p>
-          <b>{t("这就是你实际下载到的软件", "This is the actual app users download")}</b>
-          <small>{t("真实任务、真实进度、真实文件路径", "Real tasks, progress, controls, and file paths")}</small>
+          <b>{t("产品界面预览", "Product interface preview")}</b>
+          <small>{t("真实软件截图将陆续更新", "Real app screenshots will be added soon")}</small>
         </p>
       </div>
     </div>
@@ -166,7 +166,7 @@ export default function Home() {
         </div>
         <div className="hero-visual real-hero-visual">
           <ProductPreview lang={lang} />
-          <div className="floating-card float-top"><span>✓</span><p><b>{t("真实软件截图", "Real product screenshot")}</b><small>{t("不是网页概念图", "Not a concept mockup")}</small></p></div>
+          <div className="floating-card float-top"><span>✓</span><p><b>{t("产品界面预览", "Product preview")}</b><small>{t("真实截图将陆续更新", "Real screenshots coming soon")}</small></p></div>
           <div className="floating-card float-bottom"><span>↓</span><p><b>{t("任务可以恢复", "Resumable queue")}</b><small>{t("关闭后下次继续", "Continue after restarting")}</small></p></div>
         </div>
       </section>
