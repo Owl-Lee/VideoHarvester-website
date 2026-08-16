@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 type Lang = "zh" | "en";
 type LocalText = { zh: string; en: string };
 
-const features: Array<{ number: string; title: LocalText; text: LocalText }> = [
+const features: Array<{ number: string; title: LocalText; text: LocalText; image?: string }> = [
   {
     number: "01",
     title: { zh: "下载前先看清楚", en: "Know before you download" },
@@ -13,6 +13,7 @@ const features: Array<{ number: string; title: LocalText; text: LocalText }> = [
       zh: "先确认视频数量、预计画质、文件大小与保存位置，再决定是否开始。",
       en: "Review the item count, expected quality, file size, and destination before anything starts.",
     },
+    image: "/app-preflight-confirm-real.png",
   },
   {
     number: "02",
@@ -21,6 +22,7 @@ const features: Array<{ number: string; title: LocalText; text: LocalText }> = [
       zh: "识别 YouTube 播放列表与B站合集，自动建文件夹并按顺序编号。",
       en: "Recognizes YouTube playlists and Bilibili collections, then creates folders and numbered files.",
     },
+    image: "/app-bili-collection-real.png",
   },
   {
     number: "03",
@@ -29,6 +31,7 @@ const features: Array<{ number: string; title: LocalText; text: LocalText }> = [
       zh: "当前任务、整体进度、速度和剩余时间集中显示，慢的时候也知道它仍在工作。",
       en: "See the current task, total queue, speed, and time remaining—even when a site responds slowly.",
     },
+    image: "/app-queue-complete-real.png",
   },
   {
     number: "04",
@@ -37,6 +40,7 @@ const features: Array<{ number: string; title: LocalText; text: LocalText }> = [
       zh: "保存未完成队列，重新打开即可继续；已经下载过的内容默认不会重复。",
       en: "Unfinished queues are remembered, and completed media is identified by its platform ID.",
     },
+    image: "/app-resume-queue-real.png",
   },
 ];
 
@@ -89,9 +93,16 @@ function ProductPreview({ lang }: { lang: Lang }) {
       </div>
       <div className="screenshot-wrap">
         <img
-          src="/app-screenshot.png"
+          src="/app-main-window-real.png"
           alt={t("VideoHarvester Windows 软件界面预览", "VideoHarvester Windows interface preview")}
         />
+      </div>
+      <div className="real-capture-note">
+        <span className="live-dot" />
+        <p>
+          <b>{t("真实软件截图", "Real product screenshot")}</b>
+          <small>{t("下载队列、进度和诊断信息均来自实际运行界面。", "The queue, progress, and diagnostics shown are from the running app.")}</small>
+        </p>
       </div>
       <div className="actual-caption">
         <span className="live-dot" />
@@ -109,8 +120,12 @@ export default function Home() {
   const t = (zh: string, en: string) => (lang === "zh" ? zh : en);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("vh-language");
-    if (saved === "en" || saved === "zh") setLang(saved);
+    const timeoutId = window.setTimeout(() => {
+      const saved = window.localStorage.getItem("vh-language");
+      if (saved === "en" || saved === "zh") setLang(saved);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   useEffect(() => {
@@ -187,7 +202,9 @@ export default function Home() {
           {features.map((feature) => (
             <article className="feature-card" key={feature.number}>
               <span className="feature-number">{feature.number}</span>
-              <div className={`feature-visual visual-${feature.number}`} aria-hidden="true"><span /><span /><span /></div>
+              <div className={`feature-visual visual-${feature.number}`} aria-hidden="true">
+                {feature.image ? <img src={feature.image} alt="" /> : <><span /><span /><span /></>}
+              </div>
               <h3>{feature.title[lang]}</h3>
               <p>{feature.text[lang]}</p>
             </article>
@@ -205,18 +222,6 @@ export default function Home() {
             <li><span>2</span><div><b>{t("查看下载前确认", "Review the preflight summary")}</b><small>{t("数量、画质、大小和保存位置一目了然", "Confirm count, quality, size, and destination")}</small></div></li>
             <li><span>3</span><div><b>{t("等待任务完成", "Let the queue finish")}</b><small>{t("单条可以直接播放，批量只汇总一次", "Open single items or get one clean batch summary")}</small></div></li>
           </ol>
-        </div>
-        <div className="preflight-card">
-          <div className="preflight-top"><span>{t("下载前确认", "Download confirmation")}</span><i>×</i></div>
-          <div className="preflight-title"><small>{t("已识别", "Recognized")}</small><h3>{t("《Beyond 经典现场》", "Beyond — Live Classics")}</h3></div>
-          <div className="preflight-grid">
-            <p><small>{t("类型", "Type")}</small><b>{t("合集 · 12 个视频", "Collection · 12 videos")}</b></p>
-            <p><small>{t("预计实际画质", "Expected quality")}</small><b>1080p</b></p>
-            <p><small>{t("预计大小", "Estimated size")}</small><b>{t("约 3.8 GB", "About 3.8 GB")}</b></p>
-            <p><small>{t("磁盘剩余", "Disk available")}</small><b>128.6 GB</b></p>
-          </div>
-          <div className="preflight-path"><small>{t("保存至", "Save to")}</small><span>D:\Videos\Beyond Live</span></div>
-          <div className="preflight-actions"><button type="button">{t("取消", "Cancel")}</button><button type="button">{t("确认下载", "Download")}</button></div>
         </div>
       </section>
 
