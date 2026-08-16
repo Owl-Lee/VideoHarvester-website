@@ -397,15 +397,6 @@ html[lang="en"] .hero h1 {
   background: #fff;
 }
 
-.actual-caption {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  padding: 14px 17px 16px;
-  border-top: 1px solid #e0e7f0;
-  background: rgba(255, 255, 255, 0.96);
-}
-
 .real-capture-note {
   display: flex;
   align-items: center;
@@ -431,10 +422,6 @@ html[lang="en"] .hero h1 {
   font-size: 14px;
 }
 
-.actual-preview .actual-caption {
-  display: none;
-}
-
 .live-dot {
   width: 8px;
   height: 8px;
@@ -442,22 +429,6 @@ html[lang="en"] .hero h1 {
   border-radius: 50%;
   background: #27c98b;
   box-shadow: 0 0 0 5px rgba(39, 201, 139, 0.12);
-}
-
-.actual-caption p {
-  display: grid;
-  gap: 3px;
-  margin: 0;
-}
-
-.actual-caption b {
-  color: #26364e;
-  font-size: 14px;
-}
-
-.actual-caption small {
-  color: #64738a;
-  font-size: 14px;
 }
 
 .product-preview {
@@ -720,11 +691,6 @@ html[lang="en"] .hero h1 {
 .floating-card small {
   color: #65738a;
   font-size: 13px;
-}
-
-.float-top {
-  top: 25px;
-  left: 0;
 }
 
 .float-bottom {
@@ -1549,10 +1515,6 @@ footer > div:last-child {
 
   .actual-window-bar small {
     display: none;
-  }
-
-  .float-top {
-    left: -4px;
   }
 
   .float-bottom {

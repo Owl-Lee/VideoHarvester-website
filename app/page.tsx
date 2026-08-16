@@ -104,13 +104,6 @@ function ProductPreview({ lang }: { lang: Lang }) {
           <small>{t("下载队列、进度和诊断信息均来自实际运行界面。", "The queue, progress, and diagnostics shown are from the running app.")}</small>
         </p>
       </div>
-      <div className="actual-caption">
-        <span className="live-dot" />
-        <p>
-          <b>{t("产品界面预览", "Product interface preview")}</b>
-          <small>{t("真实软件截图将陆续更新", "Real app screenshots will be added soon")}</small>
-        </p>
-      </div>
     </div>
   );
 }
@@ -181,7 +174,6 @@ export default function Home() {
         </div>
         <div className="hero-visual real-hero-visual">
           <ProductPreview lang={lang} />
-          <div className="floating-card float-top"><span>✓</span><p><b>{t("产品界面预览", "Product preview")}</b><small>{t("真实截图将陆续更新", "Real screenshots coming soon")}</small></p></div>
           <div className="floating-card float-bottom"><span>↓</span><p><b>{t("任务可以恢复", "Resumable queue")}</b><small>{t("关闭后下次继续", "Continue after restarting")}</small></p></div>
         </div>
       </section>
