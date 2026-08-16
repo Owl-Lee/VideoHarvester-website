@@ -246,7 +246,7 @@ export default function Home() {
             <p className="version-label">{t("轻量版", "Lite edition")}</p>
             <h3>{t("更小，但首次需要联网。", "Tiny, with a one-time setup.")}</h3>
             <p>{t("程序会在第一次下载时自动准备所需组件，适合网络稳定的用户。", "Required components are downloaded automatically on first use. Best with a reliable connection.")}</p>
-            <div className="size-row"><b>{t("约 31 KB", "About 31 KB")}</b><span>{t("首次联网准备", "Online first-run setup")}</span></div>
+            <div className="size-row"><b>{t("约 140 KB", "About 140 KB")}</b><span>{t("首次联网准备", "Online first-run setup")}</span></div>
             <a className="light-button" href="https://github.com/Owl-Lee/VideoHarvester/releases/latest/download/VideoHarvester-v2.0-Lite.zip">{t("下载轻量版", "Download Lite")} <span>↓</span></a>
           </article>
         </div>
