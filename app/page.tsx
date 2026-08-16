@@ -148,10 +148,10 @@ export default function Home() {
           <a href="#download">{t("下载", "Download")}</a>
           <a href="#faq">{t("常见问题", "FAQ")}</a>
           <div className="language-switch" aria-label={t("切换语言", "Change language")}>
-            <button className={lang === "zh" ? "active" : ""} onClick={() => setLang("zh")} type="button">中文</button>
+            <button aria-label="中文" className={lang === "zh" ? "active" : ""} onClick={() => setLang("zh")} type="button">中</button>
             <button className={lang === "en" ? "active" : ""} onClick={() => setLang("en")} type="button">EN</button>
           </div>
-          <a className="nav-github" href="https://github.com/Owl-Lee/VideoHarvester" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+          <a className="nav-github" href="https://github.com/Owl-Lee/VideoHarvester" target="_blank" rel="noreferrer"><span className="github-label">GitHub</span><span aria-hidden="true">↗</span></a>
         </nav>
       </header>
 

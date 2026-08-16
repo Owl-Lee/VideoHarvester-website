@@ -146,6 +146,10 @@ summary:focus-visible {
 }
 
 .site-header nav .nav-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   margin-left: 5px;
   padding-inline: 17px;
   color: #fff;
@@ -1433,41 +1437,87 @@ footer > div:last-child {
 
 @media (max-width: 760px) {
   .site-header {
-    top: 10px;
-    width: calc(100% - 20px);
-    height: 62px;
-    border-radius: 18px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: 56px;
+    gap: 6px;
+    padding: 0 8px;
+    border-radius: 16px;
   }
 
   .site-header nav a:not(.nav-github) {
     display: none;
   }
 
+  .brand {
+    min-width: 0;
+    gap: 7px;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+  }
+
+  .brand strong {
+    white-space: nowrap;
+    font-size: 16px;
+    letter-spacing: -0.7px;
+  }
+
   .brand small {
     display: none;
   }
 
+  .site-header nav {
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
   .site-header nav .nav-github {
-    padding: 9px 13px;
+    width: 40px;
+    height: 36px;
+    margin-left: 0;
+    padding: 0;
+    border-radius: 11px;
+    font-size: 0;
+  }
+
+  .site-header nav .nav-github::before {
+    content: "GH";
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 0.2px;
+  }
+
+  .site-header nav .nav-github > span {
+    display: none;
   }
 
   .language-switch {
     margin-left: 0;
+    padding: 2px;
+    border-radius: 10px;
   }
 
   .language-switch button {
-    min-width: 34px;
-    padding-inline: 6px;
+    min-width: 30px;
+    height: 30px;
+    padding-inline: 5px;
+    white-space: nowrap;
+    font-size: 12.5px;
   }
 
   .hero {
     gap: 20px;
-    padding: 118px 20px 62px;
+    padding: 104px 20px 62px;
   }
 
   .hero h1 {
-    font-size: clamp(42px, 13vw, 61px);
-    letter-spacing: -3px;
+    font-size: clamp(34px, 10.2vw, 44px);
+    letter-spacing: -2.2px;
+    line-height: 1.12;
   }
 
   html[lang="en"] .hero h1 {
@@ -1571,9 +1621,13 @@ footer > div:last-child {
 
   .feature-visual {
     min-height: 0;
-    aspect-ratio: 4 / 3;
     margin: 16px 0 22px;
   }
+
+  .feature-visual.visual-01 { aspect-ratio: 394 / 330; }
+  .feature-visual.visual-02 { aspect-ratio: 594 / 330; }
+  .feature-visual.visual-03 { aspect-ratio: 840 / 311; }
+  .feature-visual.visual-04 { aspect-ratio: 410 / 185; }
 
   .feature-card h3,
   .feature-card > p,
