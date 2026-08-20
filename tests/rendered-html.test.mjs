@@ -31,13 +31,15 @@ test("server-renders the VideoHarvester product page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>VideoHarvester — 把喜欢的视频，安稳地保存下来<\/title>/i);
-  assert.match(html, /把喜欢的视频/);
-  assert.match(html, /Windows 原生软件 · 只在本机运行/);
-  assert.match(html, /下载前先看清楚/);
-  assert.match(html, /合集自动整理/);
-  assert.match(html, /进度真的看得懂/);
-  assert.match(html, /中断以后接着来/);
+  assert.match(html, /<html lang="en">/i);
+  assert.match(html, /<title>VideoHarvester — Save videos locally, with confidence<\/title>/i);
+  assert.match(html, /Save the videos you value/);
+  assert.match(html, /Native Windows app · Runs locally/);
+  assert.match(html, /Know before you download/);
+  assert.match(html, /Collections stay organized/);
+  assert.match(html, /Progress you can understand/);
+  assert.match(html, /Resume where you left off/);
+  assert.match(html, /中文/);
   assert.match(html, /VideoHarvester-v2\.0-Full\.zip/);
   assert.match(html, /VideoHarvester-v2\.0-Lite\.zip/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site|codex-preview/i);

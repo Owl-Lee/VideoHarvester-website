@@ -21,23 +21,23 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: base,
-    title: "VideoHarvester — 把喜欢的视频，安稳地保存下来",
-    description: "简单、清楚、只在本机运行的 Windows 视频保存工具。支持单个视频、YouTube 播放列表与 B站合集。",
+    title: "VideoHarvester — Save videos locally, with confidence",
+    description: "A clear, local-first Windows video workflow for authorized downloads. Supports single videos, YouTube playlists, and Bilibili collections.",
     icons: {
       icon: "/favicon.png",
       shortcut: "/favicon.png",
     },
     openGraph: {
       title: "VideoHarvester",
-      description: "把喜欢的视频，安稳地保存下来。",
+      description: "A clear, local-first Windows video workflow for authorized downloads.",
       type: "website",
-      locale: "zh_CN",
-      images: [{ url: "/og.png", width: 1536, height: 1024, alt: "VideoHarvester 产品预览" }],
+      locale: "en_US",
+      images: [{ url: "/og.png", width: 1536, height: 1024, alt: "VideoHarvester product preview" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "VideoHarvester",
-      description: "把喜欢的视频，安稳地保存下来。",
+      description: "A clear, local-first Windows video workflow for authorized downloads.",
       images: ["/og.png"],
     },
   };
@@ -45,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
     </html>
   );

@@ -109,7 +109,9 @@ function ProductPreview({ lang }: { lang: Lang }) {
 }
 
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("zh");
+  // Keep the public experience English-first while retaining an explicit,
+  // persistent Chinese choice for visitors who select it.
+  const [lang, setLang] = useState<Lang>("en");
   const t = (zh: string, en: string) => (lang === "zh" ? zh : en);
 
   useEffect(() => {
