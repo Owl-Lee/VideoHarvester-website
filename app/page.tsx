@@ -112,21 +112,24 @@ export default function Home() {
   // Keep the public experience English-first while retaining an explicit,
   // persistent Chinese choice for visitors who select it.
   const [lang, setLang] = useState<Lang>("en");
+  const [languageReady, setLanguageReady] = useState(false);
   const t = (zh: string, en: string) => (lang === "zh" ? zh : en);
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
       const saved = window.localStorage.getItem("vh-language");
       if (saved === "en" || saved === "zh") setLang(saved);
+      setLanguageReady(true);
     }, 0);
 
     return () => window.clearTimeout(timeoutId);
   }, []);
 
   useEffect(() => {
+    if (!languageReady) return;
     document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
     window.localStorage.setItem("vh-language", lang);
-  }, [lang]);
+  }, [lang, languageReady]);
 
   return (
     <main>

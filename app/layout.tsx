@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: base,
-    title: "VideoHarvester — Save videos locally, with confidence",
+    title: "VideoHarvester — Save videos safely and locally",
     description: "A clear, local-first Windows video workflow for authorized downloads. Supports single videos, YouTube playlists, and Bilibili collections.",
     icons: {
       icon: "/favicon.png",
@@ -32,6 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: "A clear, local-first Windows video workflow for authorized downloads.",
       type: "website",
       locale: "en_US",
+      alternateLocale: ["zh_CN"],
       images: [{ url: "/og.png", width: 1536, height: 1024, alt: "VideoHarvester product preview" }],
     },
     twitter: {

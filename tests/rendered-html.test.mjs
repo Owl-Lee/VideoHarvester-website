@@ -32,7 +32,7 @@ test("server-renders the VideoHarvester product page", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="en">/i);
-  assert.match(html, /<title>VideoHarvester — Save videos locally, with confidence<\/title>/i);
+  assert.match(html, /<title>VideoHarvester — Save videos safely and locally<\/title>/i);
   assert.match(html, /Save the videos you value/);
   assert.match(html, /Native Windows app · Runs locally/);
   assert.match(html, /Know before you download/);
