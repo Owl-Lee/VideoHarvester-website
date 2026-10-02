@@ -274,7 +274,7 @@ footer > div:last-child a:hover { color: var(--ink); }
   footer > div:last-child { justify-content: flex-start; }
 }
 @media (max-width: 400px) {
-  .brand > span { display: none; }
+  .brand > span:not(.brand-mark) { display: none; }
 }
 @media (max-width: 480px) {
   .site-header { height: 58px; padding-left: 10px; }
