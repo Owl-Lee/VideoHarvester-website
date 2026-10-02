@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import { metadataText, releaseInfo, type Lang } from "./site-data";
 
 type LocalText = { zh: string; en: string };
@@ -84,7 +83,7 @@ function BrandMark() {
   );
 }
 
-function ProductPreview({ lang }: { lang: Lang }) {
+function ProductPreview({ lang, assetBase }: { lang: Lang; assetBase: string }) {
   const t = (zh: string, en: string) => (lang === "zh" ? zh : en);
   return (
     <div className="actual-preview">
@@ -94,7 +93,7 @@ function ProductPreview({ lang }: { lang: Lang }) {
       </div>
       <div className="screenshot-wrap">
         <img
-          src="/app-main-window-real.png"
+          src={`${assetBase}app-main-window-real.png`}
           alt={t("VideoHarvester Windows 软件界面预览", "VideoHarvester Windows interface preview")}
         />
       </div>
@@ -111,13 +110,13 @@ function ProductPreview({ lang }: { lang: Lang }) {
 
 type HomeClientProps = {
   initialLang: Lang;
+  assetBase?: string;
 };
 
-export default function HomeClient({ initialLang }: HomeClientProps) {
+export default function HomeClient({ initialLang, assetBase = "/" }: HomeClientProps) {
   // The URL is the source of truth, so a shared language link always wins and
   // the bare production URL remains English-first.
-  const router = useRouter();
-  const [lang, setLang] = useState<Lang>(initialLang);
+  const lang = initialLang;
   const [copiedChecksum, setCopiedChecksum] = useState<"full" | "lite" | null>(null);
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const lightboxCloseRef = useRef<HTMLButtonElement>(null);
@@ -153,10 +152,9 @@ export default function HomeClient({ initialLang }: HomeClientProps) {
   }, [activeFeature]);
 
   function chooseLanguage(nextLang: Lang) {
-    setLang(nextLang);
     const url = new URL(window.location.href);
     url.searchParams.set("lang", nextLang);
-    router.replace(`${url.pathname}${url.search}${url.hash}`, { scroll: false });
+    window.location.assign(`${url.pathname}${url.search}${url.hash}`);
   }
 
   async function copyChecksum(edition: "full" | "lite") {
@@ -212,7 +210,7 @@ export default function HomeClient({ initialLang }: HomeClientProps) {
           </div>
         </div>
         <div className="hero-visual real-hero-visual">
-          <ProductPreview lang={lang} />
+          <ProductPreview lang={lang} assetBase={assetBase} />
           <div className="floating-card float-bottom"><span>↓</span><p><b>{t("任务可以恢复", "Resumable queue")}</b><small>{t("关闭后下次继续", "Continue after restarting")}</small></p></div>
         </div>
       </section>
@@ -239,7 +237,7 @@ export default function HomeClient({ initialLang }: HomeClientProps) {
                 onClick={() => setActiveFeature(index)}
                 aria-label={t(`查看“${feature.title.zh}”原图`, `View the “${feature.title.en}” screenshot at full size`)}
               >
-                {feature.image ? <img src={feature.image} alt="" /> : <><span /><span /><span /></>}
+                {feature.image ? <img src={`${assetBase}${feature.image.slice(1)}`} alt="" /> : <><span /><span /><span /></>}
                 <em>{t("查看原图", "View full size")} <i aria-hidden="true">↗</i></em>
               </button>
               <h3>{feature.title[lang]}</h3>
@@ -369,7 +367,7 @@ export default function HomeClient({ initialLang }: HomeClientProps) {
               </div>
             </div>
             <div className="screenshot-lightbox-image">
-              <img src={features[activeFeature].image} alt={t(`${features[activeFeature].title.zh}软件截图`, `${features[activeFeature].title.en} software screenshot`)} />
+              <img src={`${assetBase}${features[activeFeature].image?.slice(1)}`} alt={t(`${features[activeFeature].title.zh}软件截图`, `${features[activeFeature].title.en} software screenshot`)} />
             </div>
           </div>
         </div>

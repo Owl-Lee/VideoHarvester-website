@@ -16,8 +16,14 @@ pnpm dev
 Create a production build:
 
 ```bash
-pnpm build
+pnpm build:pages
 ```
+
+## Automatic publishing (Claude and other contributors)
+
+The website repository is `Owl-Lee/VideoHarvester-website`. Edit `app/home-client.tsx`, `app/globals.css`, or `app/site-data.ts`, run `pnpm build:pages` and `node --test tests/static-pages.test.mjs`, then push to `main`. GitHub Actions builds and publishes the website automatically; no ChatGPT/Sites approval is involved. Repository write access is required. A feature branch is not published until merged into `main`.
+
+Pages serves pre-rendered English `/` and Chinese `/zh/` pages. Legacy `?lang=zh` and `?lang=en` links remain supported. `PAGES_BASE` is supplied by the Pages configuration, so the same build supports the GitHub project URL and the custom domain. The original Vinext/Worker build remains available as `pnpm build` for rollback; it is not used by Pages.
 
 ## Release checklist
 
@@ -30,7 +36,7 @@ pnpm build
 
 - React 19
 - Vinext / Vite
-- Cloudflare Workers 兼容构建
+- GitHub Pages static hosting with GitHub Actions
 - No database, user accounts, or telemetry
 
 ---
@@ -53,8 +59,14 @@ pnpm dev
 生产构建：
 
 ```bash
-pnpm build
+pnpm build:pages
 ```
+
+### 自动发布（供 Claude 和其他开发者使用）
+
+官网仓库为 `Owl-Lee/VideoHarvester-website`。修改 `app/home-client.tsx`、`app/globals.css` 或 `app/site-data.ts`，运行 `pnpm build:pages` 和 `node --test tests/static-pages.test.mjs`，再推送到 `main`。GitHub Actions 会自动构建并发布，无须 ChatGPT/Sites 审批，但操作者必须有仓库写权限。其他分支须合并进 `main` 才会发布。
+
+英文首页 `/` 和中文 `/zh/` 均预渲染为静态 HTML，旧 `?lang=zh`、`?lang=en` 链接继续兼容。部署流程根据 Pages 配置自动设置资源前缀，兼容 GitHub 项目地址及自定义域名。原 Vinext/Worker 构建 `pnpm build` 保留作回退，不用于 Pages 发布。
 
 ### 发布检查
 
@@ -67,5 +79,5 @@ pnpm build
 
 - React 19
 - Vinext / Vite
-- Cloudflare Workers 兼容构建
+- GitHub Pages 静态托管与 GitHub Actions 自动发布
 - 无数据库、无用户账号、无遥测
